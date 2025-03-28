@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinanzas para Alberto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Adivinanzas para Alberto</h1>
+            <p>Responde correctamente para descubrir mensajes secretos</p>
+        </header>
+        
+        <main>
+            <div class="riddle-container">
+                <div class="riddle" id="riddle1">
+                    <h3>Adivinanza 1: Futbol</h3>
+                    <p>Con las manos pero no como panadero,<br>
+                    bajo los tres palos soy el primero.<br>
+                    Cuando el balón viene hacia mí,<br>
+                    con un salto lo paro aquí. ¿Quién soy?</p>
+                    <input type="text" id="answer1" placeholder="Tu respuesta...">
+                    <button onclick="checkAnswer(1)">Comprobar</button>
+                    <p id="result1" class="hidden"></p>
+                </div>
+                
+                <div class="riddle" id="riddle2">
+                    <h3>Adivinanza 2: Coches</h3>
+                    <p>Rugiendo como león por la autopista,<br>
+                    con cuatro ruedas y vista panorámica.<br>
+                    Mi marca es un animal que salta,<br>
+                    ¿qué coche soy? (marca del coche)</p>
+                    <input type="text" id="answer2" placeholder="Tu respuesta...">
+                    <button onclick="checkAnswer(2)">Comprobar</button>
+                    <p id="result2" class="hidden"></p>
+                </div>
+                
+                <div class="riddle" id="riddle3">
+                    <h3>Adivinanza 3: Real Madrid</h3>
+                    <p>Blanco como la nieve, rey de Europa,<br>
+                    en mi estadio la alegría se aglomera.<br>
+                    Con el número 14 jugaba un delantero,<br>
+                    francés y rápido como un galgo ¿quién era?</p>
+                    <input type="text" id="answer3" placeholder="Tu respuesta...">
+                    <button onclick="checkAnswer(3)">Comprobar</button>
+                    <p id="result3" class="hidden"></p>
+                </div>
+            </div>
+            
+            <a href="Main.html" class="btn">Volver al Inicio</a>
+        </main>
+    </div>
+    
+    <script src="adivinanzas.js"></script>
+</body>
+</html>

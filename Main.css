@@ -1,0 +1,50 @@
+body {
+    background-color: #5605ab; /* Azul Marino Real Madrid */
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff; /* Dorado Real Madrid */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+h1 {
+    color: #000000;
+}
+.nav {
+    margin-top: 20px;
+}
+.nav a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: white;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.nav a:hover {
+    background-color: #d4af37; /* Dorado más oscuro */
+    color: white;
+}
+
+.button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #0a2351;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+.button:hover {
+    background-color: #1a3d7c;
+}
+
