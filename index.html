@@ -5,29 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Main.css">
     <title>¡Feliz cumpleaños, Alberto!</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>¡Feliz cumpleaños, Alberto! 🎉⚽</h1>
+        <h1>⚽🎉 ¡Feliz cumpleaños, Alberto! 🎉⚽</h1>
         <p>Bienvenido a tu sorpresa especial. Aquí encontrarás juegos, mensajes y mucho más.</p>
         <div class="nav">
             <a href="adivinanzas.html">Jugar Adivinanzas</a>
             <a href="fotos.html">Ver Fotos</a>
             <a href="carta.html">Tu Carta</a>
-            <button class="button" onclick="generarPDF()">Descargar Carta</button>
         </div>
     </div>
-    <script>
-        function generarPDF() {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
-            doc.setFontSize(16);
-            doc.text("Querido Alberto,", 20, 30);
-            doc.text("Espero que tengas un día increíble. Esta carta es para decirte lo especial que eres y todo lo que significas como amigo.", 20, 50, { maxWidth: 170 });
-            doc.text("¡Feliz cumpleaños!", 20, 80);
-            doc.save("Carta_Alberto.pdf");
-        }
-    </script>
 </body>
 </html>
