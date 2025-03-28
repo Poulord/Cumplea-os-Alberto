@@ -11,21 +11,66 @@
     <div class="container">
         <header>
             <h1>Tu Carta Especial</h1>
+            <h2>Hola manin, ¿como andas?, puede que te resulte algo peculiar esto, pero aqui tienes unos pequeños detalles, espero que te gusten jeje</h2>
             <button class="button" onclick="generarPDF()">Descargar Carta</button>
         </header>
-        
         <main>
             <script>
                 function generarPDF() {
                     const { jsPDF } = window.jspdf;
                     const doc = new jsPDF();
-                    doc.setFontSize(16);
-                    doc.text("Querido Alberto,", 20, 30);
-                    doc.text("Espero que tengas un día increíble. Esta carta es para decirte lo especial que eres y todo lo que significas como amigo.", 20, 50, { maxWidth: 170 });
-                    doc.text("¡Feliz cumpleaños!", 20, 80);
+                    doc.setFontSize(12);
+                
+                    // Definimos la carta completa y la agregamos al PDF, en varias líneas
+                    const texto = [
+                        "Muy buenas tt, sé que no es mucho esto para lo que realmente te mereces, pero bueno, aquí tienes una pequeña cartita para ti.",
+                        "",
+                        "La verdad es que eres alguien admirable tío, da igual los problemas y adversidades a los que te hayas enfrentado siempre te fuerzas a seguir adelante, y eso lo admiro. Me acuerdo de las épocas que has tenido con el cúmulo de problemas que se te han juntado a veces como tu familia, tu chica, la pérdida de familiares queridos y el extra de trabajar o entrenar y pienso, WOW, daba igual que se te viniera encima, tú estabas ahí, te mantienes firme y sigues ayudando a tus amigos, tratando de ser un poco mejor, no permitiendo así, con lo fácil que es dejarte llevar por el camino sencillo y perder así una batalla contigo mismo. Por todo esto, sin duda alguna si te tuviera que definir de alguna forma sería como un luchador, listo siempre para la batalla.",
+                        "",
+                        "Sabes, agradezco mucho los detalles que tienes conmigo, como cuando si es necesario me acercas a algún lado para comprar o hacer lo que sea como con el tabaco o mi yaya, o cuando te ofreces voluntario si es necesario para llevar a alguien aunque ni siquiera sea de tu incumbencia como cuando te ofreciste a llevar a mi tía a Alcalá. Además, como olvidar el hecho de que sé que si necesito hablar con alguien, sé que estarás siempre ahí, ya que incluso como sabes que no suelo hablar mucho yo en general jeje, si te digo un día de quedar ya de por sí te preocupas o cuestionas si estoy bien o si me ha pasado algo. Esos detalles se agradecen un montón.",
+                        "",
+                        "Para finalizar, te confieso que a veces pienso que no sé qué he hecho para merecer a alguien como tú, porque de verdad que eres alguien único, y no creo que haya hecho tanto por ti como tú has hecho por mí.",
+                        "",
+                        "Dicho todo esto, gracias por ser mi amigo, y espero que nuestra amistad nunca acabe.",
+                        "",
+                        "¡¡¡¡Feliz cumpleaños!!!!",
+                        "",
+                        "Pablo García Ollero (El random ese xd)"
+                    ];
+                
+                    let y = 30; // Inicializamos la posición y del texto
+                    const margenIzquierdo = 20; // Márgenes para el texto
+                    const margenDerecho = 190; // El margen derecho es 200 - margenIzquierdo
+                
+                    // Función para agregar texto con manejo de saltos de página
+                    function agregarTexto(textoArray) {
+                        textoArray.forEach(line => {
+                            const lineHeight = 6; // Altura de cada línea
+                            const maxWidth = margenDerecho - margenIzquierdo;
+                
+                            // Dividir el texto en líneas que quepan en el ancho máximo
+                            const lines = doc.splitTextToSize(line, maxWidth);
+                
+                            // Verificar si el texto cabe en la página actual
+                            if (y + lines.length * lineHeight > 280) {
+                                doc.addPage(); // Agregar una nueva página si no cabe
+                                y = 30; // Reiniciar la posición y
+                            }
+                
+                            // Agregar las líneas al PDF
+                            doc.text(lines, margenIzquierdo, y);
+                            y += lines.length * lineHeight; // Actualizar la posición y
+                        });
+                    }
+                
+                    // Agregar el texto al PDF
+                    agregarTexto(texto);
+                
+                    // Guardamos el PDF con el nombre adecuado
                     doc.save("Carta_Alberto.pdf");
                 }
             </script>
+        
             
             <a href="index.html" class="btn">Volver al Inicio</a>
         </main>

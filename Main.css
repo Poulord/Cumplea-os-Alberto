@@ -35,6 +35,15 @@ h1 {
     font-weight: bold;
 }
 
+h2 {
+    color: #000000;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    z-index: 10; /* Asegura que el texto esté sobre otros elementos */
+    position: relative; /* Necesario para aplicar z-index */
+    
+}
+
 p{
     color: #000;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -56,13 +65,13 @@ p{
 .nav a:hover {
     background-color: #d4af37; /* Dorado más oscuro */
     color: white;
-    
+    transform: scale(1.06); /* Efecto de aumento */
 }
 
 /*BOTON DE VUELTA AL MENU*/
 .btn {
     display: inline-block;
-    background-color: #1a6fc9; /* Azul madridista */
+    background-color: #1a6fc9; 
     color: white;
     padding: 10px 20px;
     margin: 10px;
@@ -74,4 +83,21 @@ p{
 
 .btn:hover {
     background-color: #0d4b8b;
+    transform: scale(1.06); /* Efecto de aumento */
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .button {
+        padding: 10px;
+        width: 100%; /* Botones más grandes en móviles */
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+    }
 }

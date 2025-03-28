@@ -46,6 +46,7 @@ header {
 
 .btn:hover {
     background-color: #0d4b8b;
+    transform: scale(1.06); /* Efecto de aumento */
 }
 
 .options {
