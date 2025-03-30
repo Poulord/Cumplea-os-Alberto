@@ -101,3 +101,27 @@ p{
         gap: 10px;
     }
 }
+
+.search-box {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+}
+.search-box input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #0a2351;
+    border-radius: 5px;
+}
+.search-box button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #0a2351;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.search-box button:hover {
+    background-color: #1a3d7c;
+}
