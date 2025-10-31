@@ -3,56 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adivinanzas para Alberto</title>
+    <title>Prueba de Competencia Mágica</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Adivinanzas para Alberto</h1>
-            <p>Responde correctamente para descubrir mensajes secretos</p>
+    <div class="page-wrapper">
+        <header class="site-header">
+            <h1 class="site-title">Prueba de Competencia Mágica</h1>
+            <p class="site-subtitle">Demuestra que mereces el acceso al expediente de Alberto. Cada respuesta correcta revela tu maestría en bromas y recuerdos compartidos.</p>
         </header>
-        
-        <main>
-            <div class="riddle-container">
-                <div class="riddle" id="riddle1">
-                    <h3>Adivinanza 1: Futbol</h3>
-                    <p>Con las manos pero no como panadero,<br>
-                    bajo los tres palos soy el primero.<br>
-                    Cuando el balón viene hacia mí,<br>
-                    con un salto lo paro aquí. ¿Quién soy?</p>
-                    <input type="text" id="answer1" placeholder="Tu respuesta...">
-                    <button onclick="checkAnswer(1)">Comprobar</button>
-                    <p id="result1" class="hidden"></p>
-                </div>
-                
-                <div class="riddle" id="riddle2">
-                    <h3>Adivinanza 2: Coches</h3>
-                    <p>Rugiendo como león por la autopista,<br>
-                    con cuatro ruedas y vista panorámica.<br>
-                    Mi marca es un animal que salta,<br>
-                    ¿qué coche soy? (marca del coche)</p>
-                    <input type="text" id="answer2" placeholder="Tu respuesta...">
-                    <button onclick="checkAnswer(2)">Comprobar</button>
-                    <p id="result2" class="hidden"></p>
-                </div>
-                
-                <div class="riddle" id="riddle3">
-                    <h3>Adivinanza 3: Real Madrid</h3>
-                    <p>Blanco como la nieve, rey de Europa,<br>
-                    en mi estadio la alegría se aglomera.<br>
-                    Con el número 14 jugaba un delantero,<br>
-                    francés y rápido como un galgo ¿quién era?</p>
-                    <input type="text" id="answer3" placeholder="Tu respuesta...">
-                    <button onclick="checkAnswer(3)">Comprobar</button>
-                    <p id="result3" class="hidden"></p>
-                </div>
-            </div>
-            
-            <a href="index.html" class="btn">Volver al Inicio</a>
-        </main>
+
+        <section class="quiz-wrapper" id="quiz" aria-live="polite">
+            <p class="question-counter" id="questionCounter"></p>
+            <h2 class="question-text" id="questionText"></h2>
+            <div class="answer-grid" id="answerOptions"></div>
+            <p class="feedback" id="feedback"></p>
+            <div class="results" id="results" hidden></div>
+        </section>
+
+        <div style="margin-top: 2.4rem; text-align: center;">
+            <a class="return-link" href="index.html">⬅ Regresar a la Sala Común</a>
+        </div>
     </div>
-    
-    <script src="adivinanzas.js"></script>
+
+    <footer>
+        Ministerio de Festejos Mágicos · Control de calidad de hechizos amistosos.
+    </footer>
+
+    <script src="adivinanzas.js" defer></script>
 </body>
 </html>

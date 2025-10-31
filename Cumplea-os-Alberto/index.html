@@ -3,21 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Main.css">
-    <title>¡Feliz cumpleaños, Alberto!</title>
+    <title>Sala Común de Cumpleaños de Alberto</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>⚽🎉 ¡Feliz cumpleaños, Alberto! 🎉⚽</h1>
-        <p>¡¡¡Resuelve las adivinanzas para obtener un codigo que ingresar en el buscador!!!</p>
-        <div class="nav">
-            <a href="adivinanzas.html">Jugar Adivinanzas</a>
-        </div>
-        <div class="search-box">
-            <input type="text" id="codigoSecreto" placeholder="Ingresa el código...">
-            <button onclick="verificarCodigo()">Ir</button>
+    <div class="page-wrapper">
+        <header class="site-header">
+            <h1 class="site-title">Sala Común de Cumpleaños de Alberto</h1>
+            <p class="site-subtitle">Bienvenido al rincón más mágico de Hogwarts, reservado para celebrar otro año de aventuras, risas y hechizos improvisados junto a Alberto.</p>
+        </header>
+
+        <main class="magic-grid" aria-label="Menú principal">
+            <a class="magic-card" href="fotos.html">
+                <h2>Momentos legendarios</h2>
+                <p>Sumérgete en el Pensadero y revive recuerdos que aún huelen a chocolate de Honeydukes.</p>
+            </a>
+            <a class="magic-card" href="adivinanzas.html">
+                <h2>Pruebas mágicas de intelecto</h2>
+                <p>Demuestra tu sabiduría frente a la Orden de la Risa con un cuestionario hechizado.</p>
+            </a>
+            <a class="magic-card" href="carta.html">
+                <h2>Mensaje sentimental</h2>
+                <p>Despliega el pergamino final y deja que la nostalgia haga su magia.</p>
+            </a>
+            <a class="magic-card magic-card--disabled" href="secreto.html" data-admin-card>
+                <h2>Área restringida</h2>
+                <p>Archivo clasificado del Ministerio de Magia. Solo para ojos autorizados.</p>
+            </a>
+        </main>
+
+        <section style="margin-top: 3rem; text-align: center;">
+            <button class="magic-button" id="adminAccessButton" type="button">Acceso restringido 🔐</button>
+            <p class="status-message" id="adminStatus" role="status" aria-live="polite"></p>
+        </section>
+    </div>
+
+    <div class="modal-backdrop" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal">
+            <h2 id="modalTitle">Acceso administrativo</h2>
+            <p>Documento clasificado del Ministerio de Magia. Introduzca sus credenciales.</p>
+            <form id="adminLoginForm">
+                <div class="field-group">
+                    <label for="username">Nombre de mago autorizado</label>
+                    <input id="username" name="username" type="text" autocomplete="username" required>
+                </div>
+                <div class="field-group">
+                    <label for="password">Palabra secreta</label>
+                    <input id="password" name="password" type="password" autocomplete="current-password" required>
+                </div>
+                <p class="error-message" id="loginError" role="alert" aria-live="assertive"></p>
+                <div class="modal-actions">
+                    <button class="magic-button" type="submit">Invocar acceso</button>
+                    <button class="modal-close" type="button" id="closeModalButton">Cancelar hechizo</button>
+                </div>
+            </form>
         </div>
     </div>
-    <script src="index.js"></script>
+
+    <footer>
+        Ministerio de Festejos Mágicos · Proyecto diseñado para crecer con futuras pociones de backend.
+    </footer>
+
+    <script src="index.js" defer></script>
 </body>
 </html>

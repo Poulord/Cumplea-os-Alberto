@@ -4,76 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carta para Alberto</title>
-    <link rel="stylesheet" href="Main.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Tu Carta Especial</h1>
-            <h2>Hola manin, ¿como andas?, puede que te resulte algo peculiar esto, pero aqui tienes unos pequeños detalles, espero que te gusten jeje</h2>
-            <button class="button" onclick="generarPDF()">Descargar Carta</button>
-        </header>
-        <main>
-            <script>
-                function generarPDF() {
-                    const { jsPDF } = window.jspdf;
-                    const doc = new jsPDF();
-                    doc.setFontSize(12);
-                
-                    // Definimos la carta completa y la agregamos al PDF, en varias líneas
-                    const texto = [
-                        "Muy buenas tt, sé que no es mucho esto para lo que realmente te mereces, pero bueno, aquí tienes una pequeña cartita para ti.",
-                        "",
-                        "La verdad es que eres alguien admirable tío, da igual los problemas y adversidades a los que te hayas enfrentado siempre te fuerzas a seguir adelante, y eso lo admiro. Me acuerdo de las épocas que has tenido con el cúmulo de problemas que se te han juntado a veces como tu familia, tu chica, la pérdida de familiares queridos y el extra de trabajar o entrenar y pienso, WOW, daba igual que se te viniera encima, tú estabas ahí, te mantienes firme y sigues ayudando a tus amigos, tratando de ser un poco mejor, no permitiendo así, con lo fácil que es dejarte llevar por el camino sencillo y perder así una batalla contigo mismo. Por todo esto, sin duda alguna si te tuviera que definir de alguna forma sería como un luchador, listo siempre para la batalla.",
-                        "",
-                        "Sabes, agradezco mucho los detalles que tienes conmigo, como cuando si es necesario me acercas a algún lado para comprar o hacer lo que sea como con el tabaco o mi yaya, o cuando te ofreces voluntario si es necesario para llevar a alguien aunque ni siquiera sea de tu incumbencia como cuando te ofreciste a llevar a mi tía a Alcalá. Además, como olvidar el hecho de que sé que si necesito hablar con alguien, sé que estarás siempre ahí, ya que incluso como sabes que no suelo hablar mucho yo en general jeje, si te digo un día de quedar ya de por sí te preocupas o cuestionas si estoy bien o si me ha pasado algo. Esos detalles se agradecen un montón.",
-                        "",
-                        "Para finalizar, te confieso que a veces pienso que no sé qué he hecho para merecer a alguien como tú, porque de verdad que eres alguien único, y no creo que haya hecho tanto por ti como tú has hecho por mí.",
-                        "",
-                        "Dicho todo esto, gracias por ser mi amigo, y espero que nuestra amistad nunca acabe.",
-                        "",
-                        "¡¡¡¡Feliz cumpleaños!!!!",
-                        "",
-                        "Pablo García Ollero (El random ese xd)"
-                    ];
-                
-                    let y = 30; // Inicializamos la posición y del texto
-                    const margenIzquierdo = 20; // Márgenes para el texto
-                    const margenDerecho = 190; // El margen derecho es 200 - margenIzquierdo
-                
-                    // Función para agregar texto con manejo de saltos de página
-                    function agregarTexto(textoArray) {
-                        textoArray.forEach(line => {
-                            const lineHeight = 6; // Altura de cada línea
-                            const maxWidth = margenDerecho - margenIzquierdo;
-                
-                            // Dividir el texto en líneas que quepan en el ancho máximo
-                            const lines = doc.splitTextToSize(line, maxWidth);
-                
-                            // Verificar si el texto cabe en la página actual
-                            if (y + lines.length * lineHeight > 280) {
-                                doc.addPage(); // Agregar una nueva página si no cabe
-                                y = 30; // Reiniciar la posición y
-                            }
-                
-                            // Agregar las líneas al PDF
-                            doc.text(lines, margenIzquierdo, y);
-                            y += lines.length * lineHeight; // Actualizar la posición y
-                        });
-                    }
-                
-                    // Agregar el texto al PDF
-                    agregarTexto(texto);
-                
-                    // Guardamos el PDF con el nombre adecuado
-                    doc.save("Carta_Alberto.pdf");
-                }
-            </script>
-        
-            
-            <a href="secreto.html" class="btn">Volver al Inicio</a>
-        </main>
+    <div class="page-wrapper">
+        <article class="letter-wrapper" aria-labelledby="letter-title">
+            <h1 class="site-title" id="letter-title">Carta para Alberto</h1>
+            <h2>Querido Alberto,</h2>
+
+            <p>Hoy quería detener la vorágine de hechizos y carcajadas para dejarte estas palabras con calma. Me siento afortunado de tenerte como compañero de aventuras, de locuras y de silencios cómodos. De los que entienden cuando basta una mirada para saber si el día fue un lío o una victoria.</p>
+
+            <p>Gracias por llegar con energía incluso cuando el mundo parece ponerse en tu contra, por las veces que has cargado con problemas ajenos como si fueran tuyos, y por recordarnos que la lealtad no es un hechizo, sino una decisión diaria. Contigo la amistad se siente sencilla, real, sin filtros.</p>
+
+            <p>Me encanta que, incluso cuando prometes imposibles o llegas con ese retraso legendario, siempre terminas apareciendo con más ilusión que nadie. Sabes escuchar, sabes bromear, sabes convertir una quedada normal en una noche para el Pensadero.</p>
+
+            <p>Deseo que este año esté repleto de motivos para celebrar, de metas cumplidas y de gente buena a tu alrededor. Si los planes se tuercen, ya sabes que aquí tienes a alguien listo para improvisar contigo y mantener el ánimo a raya.</p>
+
+            <p>Gracias por ser tú, por dejarme ser yo, y por hacer que nuestra historia siga sumando capítulos memorables.</p>
+
+            <p>Con todo el cariño,</p>
+            <p><strong>– Tu colega</strong></p>
+
+            <button class="print-button" type="button" onclick="window.print()">🖨 Imprimir / Guardar</button>
+            <a class="return-link" href="index.html">⬅ Volver a la Sala Común</a>
+        </article>
     </div>
+
+    <footer>
+        Ministerio de Festejos Mágicos · Que la tinta nunca se agote.
+    </footer>
 </body>
 </html>
