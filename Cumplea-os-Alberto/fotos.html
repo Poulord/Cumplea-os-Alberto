@@ -3,25 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fotos de Alberto</title>
-    <link rel="stylesheet" href="Main.css">
+    <title>Pensadero de Recuerdos</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Galería de Fotos</h1>
-            <p>Algunos momentos especiales</p>
+    <div class="page-wrapper">
+        <header class="site-header">
+            <h1 class="site-title">Pensadero de Recuerdos</h1>
+            <p class="site-subtitle">Observa cómo los marcos encantados reviven momentos con Alberto. Cambia entre nostalgia y troleo para disfrutar cada recuerdo a tu manera.</p>
         </header>
-        
-        <main>
-            <div class="gallery">
-                <img src="../images/foto1.jpg" alt="Alberto jugando al fútbol">
-                <img src="../images/foto2.jpg" alt="Alberto con amigos">
-                <!-- Añade más imágenes según necesites -->
+
+        <section class="gallery-wrapper">
+            <div class="gallery-controls">
+                <button class="magic-button" id="captionModeToggle" type="button">Modo Nostalgia 🥲</button>
             </div>
-            
-            <a href="secreto.html"  class="btn">Volver al Inicio</a>
-        </main>
+
+            <div class="memory-list">
+                <article class="memory-card">
+                    <div class="memory-media">
+                        <img src="assets/foto1.jpg" alt="Alberto y amigos celebrando" loading="lazy">
+                    </div>
+                    <p class="memory-caption" data-index="0">Descripción nostálgica</p>
+                </article>
+
+                <article class="memory-card">
+                    <div class="memory-media">
+                        <img src="assets/foto2.jpg" alt="Partido de fútbol con Alberto como portero" loading="lazy">
+                    </div>
+                    <p class="memory-caption" data-index="1">Descripción nostálgica</p>
+                </article>
+
+                <article class="memory-card">
+                    <div class="memory-media">
+                        <img src="assets/foto3.jpg" alt="Viaje épico con Alberto" loading="lazy">
+                    </div>
+                    <p class="memory-caption" data-index="2">Descripción nostálgica</p>
+                </article>
+
+                <article class="memory-card">
+                    <div class="memory-media">
+                        <img src="assets/foto4.jpg" alt="Celebración de cumpleaños con Alberto" loading="lazy">
+                    </div>
+                    <p class="memory-caption" data-index="3">Descripción nostálgica</p>
+                </article>
+            </div>
+        </section>
+
+        <div style="margin-top: 2.4rem; text-align: center;">
+            <a class="return-link" href="index.html">⬅ Regresar a la Sala Común</a>
+        </div>
     </div>
+
+    <footer>
+        Ministerio de Festejos Mágicos · Custodiando recuerdos desde tiempos inmemoriales.
+    </footer>
+
+    <script src="fotos.js" defer></script>
 </body>
 </html>
